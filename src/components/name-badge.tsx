@@ -1,6 +1,11 @@
-const addTwo = (n: number) => n + 2;
+type NameBadgeProps = {
+  name: string,
+  greeting?: string
+}
 
-const NameBadge = (props: { name: string }) => {
+type ButtonProps = React.ComponentPropsWithoutRef<'button'>;
+
+const NameBadge = ({name, greeting}: NameBadgeProps) => {
   return (
     <section className="badge">
       <header className="badge-header">
@@ -8,7 +13,7 @@ const NameBadge = (props: { name: string }) => {
         <p>My name is…</p>
       </header>
       <div className="badge-body">
-        <p className="badge-name">{props.name}</p>
+        <p className="badge-name">{name}</p>
       </div>
       <footer className="badge-footer" />
     </section>
